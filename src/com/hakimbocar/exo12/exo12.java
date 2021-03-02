@@ -36,5 +36,6 @@ public class exo12 {
                 s.startsWith("u") || s.startsWith("o") || s.startsWith("e") ||
                 s.startsWith("y");
 
+
     }
 }
