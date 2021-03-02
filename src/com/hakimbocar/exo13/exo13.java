@@ -19,8 +19,9 @@ public class exo13 {
         System.out.println("==============================================================");
 
 
-        // Question 2:  altering the map value with map.putIfAbsent
         List<Integer> keys = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8);
+
+        // Question 2:  altering the map value with map.putIfAbsent
         System.out.println("Map using map.putIfAbsent:");
         for(int key: keys) {
             map.putIfAbsent(key,"");

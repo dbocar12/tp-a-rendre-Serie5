@@ -29,19 +29,12 @@ public class exo12 {
         words.forEach(System.out::println);
         System.out.println("==============================================================");
 
-        //words.replaceAll(String::toUpperCase);
+        //  convert words to upperCase
+        words.replaceAll(String::toUpperCase);
 
         Predicate<String> isStartWithVowel = (s) -> s.startsWith("a") || s.startsWith("i") ||
                 s.startsWith("u") || s.startsWith("o") || s.startsWith("e") ||
                 s.startsWith("y");
-
-
-        words.forEach(System.out::println);
-        System.out.println("==============================================================");
-
-
-
-
 
     }
 }
