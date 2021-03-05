@@ -24,17 +24,25 @@ public class exo12 {
         System.out.println("==============================================================");
 
         // Remove the string if its length is even
+        ArrayList<String> wordsWithEvenLength = new ArrayList<>(words);
         System.out.println("List of String with odd length:");
-        words.removeIf((word -> (word.length()%2)==0));
-        words.forEach(System.out::println);
+        wordsWithEvenLength.removeIf((word -> (word.length()%2)==0));
+        wordsWithEvenLength.forEach(System.out::println);
         System.out.println("==============================================================");
 
         //  convert words to upperCase
-        words.replaceAll(String::toUpperCase);
+        ArrayList<String> wordsToUpperCase = new ArrayList<>(words);
+        wordsToUpperCase.replaceAll(String::toUpperCase);
+        System.out.println("List of String to UpperCase:");
+        wordsToUpperCase.forEach(System.out::println);
+        System.out.println("==============================================================");
 
+        ArrayList<String> wordsStartWithVoyelToUpperCase = new ArrayList<>(words);
         Predicate<String> isStartWithVowel = (s) -> s.startsWith("a") || s.startsWith("i") ||
                 s.startsWith("u") || s.startsWith("o") || s.startsWith("e") ||
                 s.startsWith("y");
+
+
 
 
     }
