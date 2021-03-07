@@ -42,7 +42,9 @@ public class exo12 {
                 s.startsWith("u") || s.startsWith("o") || s.startsWith("e") ||
                 s.startsWith("y");
 
-
+        wordsStartWithVoyelToUpperCase.replaceAll((s) -> isStartWithVowel.test(s) ? s.toUpperCase() : s);
+        System.out.println("List of String to UpperCase for words start with vowel:");
+        wordsStartWithVoyelToUpperCase.forEach(System.out::println);
 
 
     }
