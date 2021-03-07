@@ -1,6 +1,7 @@
 package com.hakimbocar.exo12;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.function.Predicate;
 
 public class exo12 {
@@ -45,6 +46,31 @@ public class exo12 {
         wordsStartWithVoyelToUpperCase.replaceAll((s) -> isStartWithVowel.test(s) ? s.toUpperCase() : s);
         System.out.println("List of String to UpperCase for words start with vowel:");
         wordsStartWithVoyelToUpperCase.forEach(System.out::println);
+
+        // comparator that compare by length of the string
+        ArrayList<String> wordsForLengthComparator = new ArrayList<>(words);
+        Comparator<String> lengthComparator = Comparator.comparingInt(String::length);
+        // sorting by length of the string
+        wordsForLengthComparator.sort(lengthComparator);
+        System.out.println("===========================================================");
+        System.out.println("List sorted by length of string :");
+        wordsForLengthComparator.forEach((s)->System.out.println(s+" \t\tLength->"+s.length()));
+        System.out.println("===========================================================");
+
+
+        ArrayList<String> wordsForLengthThenAlphabeticComparator = new ArrayList<>(words);
+        // comparator that compare by length of the string then Alphabetic order
+        Comparator<String> compareByLengthThenAlphabetic = (s1, s2) -> {
+            if(s1.length() - s2.length() == 0) {
+                return s1.compareTo(s2);
+            }
+            return s1.length() - s2.length();
+        };
+
+        wordsForLengthThenAlphabeticComparator.sort(compareByLengthThenAlphabetic);
+        System.out.println("List sorted by length of string then Alphabetic Order :");
+        wordsForLengthThenAlphabeticComparator.forEach((s)->System.out.println(s+" \t\tLength->"+s.length()));
+        System.out.println("===========================================================");
 
 
     }
