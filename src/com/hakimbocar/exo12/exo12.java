@@ -60,12 +60,18 @@ public class exo12 {
 
         ArrayList<String> wordsForLengthThenAlphabeticComparator = new ArrayList<>(words);
         // comparator that compare by length of the string then Alphabetic order
+        Comparator<String> compareByLengthThenAlphabetic = Comparator.comparing(String::length).
+                thenComparing(String::compareTo);
+
+        /* Version 2
+        *
         Comparator<String> compareByLengthThenAlphabetic = (s1, s2) -> {
             if(s1.length() - s2.length() == 0) {
                 return s1.compareTo(s2);
             }
             return s1.length() - s2.length();
         };
+        */
 
         wordsForLengthThenAlphabeticComparator.sort(compareByLengthThenAlphabetic);
         System.out.println("List sorted by length of string then Alphabetic Order :");
